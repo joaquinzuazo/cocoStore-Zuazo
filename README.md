@@ -20,10 +20,11 @@
 
 ### Ejecución: 🔧
 
-*Una vez clonado el repositorio y contando con los pre-requisitos, podrás correr el proyecto ejecutando el siguiente comando, tenes que recordar estar posicionado dentro de la carpeta del proyecto:*
+*Una vez clonado el repositorio y contando con los pre-requisitos, podrás correr el proyecto ejecutando los siguientes comandos, tenes que recordar estar posicionado dentro de la carpeta del proyecto:*
 
 ```
-npm start
+npm install -> para instalar todas las dependencias correspondientes
+npm start -> para correr el proyecto
 ```
 
 
