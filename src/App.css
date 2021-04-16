@@ -1,32 +1,21 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url(./components/navBar/categoryList/categoryList.css);
+@import url(./components/navBar/navBar.css);
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 20px 10px 20px 10px;
+}
+
+.App-main{
+  display: flex;
+  height: 60vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 768px){
+  .App-header{
+      padding: 2% 10%;
   }
 }
