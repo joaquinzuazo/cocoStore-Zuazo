@@ -1,6 +1,6 @@
 const CategoryList = (props)=>{
     return(
-        <a className='header-navBar-item' href='./'>
+        <a href={props.href}>
             {props.category}
         </a>
     )

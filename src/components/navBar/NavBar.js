@@ -1,25 +1,21 @@
 import CategoryList from './categoryList/CategoryList'
+import CartWidget from './cartWidget/CartWidget'
 import ImgWidget from './imgWidget/imgWidget'
 import { Fragment } from 'react'
-import Logo from './cocoLogo.png'
-import ImgTenis from './tenis.png'
+import Logo from './coco.png'
 
 
 const NavBar = ()=>{
     return(
         <Fragment>
-            <div className='header-top'>
-                <div className='header-top-logo'>
-                    <ImgWidget img={Logo} class="logo-img"/>
-                </div>
-                <div className='header-top-banner'>
-                    <ImgWidget img={ImgTenis} class="banner-img"/>
-                </div>
+            <div className='header-img'>
+                <ImgWidget img={Logo}/> 
             </div>            
             <nav className='header-navBar'>
-                <CategoryList category='HOME' />    
-                <CategoryList category='PRODUCTOS' />    
-                <CategoryList category='CONTACTO' />   
+                <CategoryList category='Home' href='./' />    
+                <CategoryList category='Productos' href='./' />    
+                <CategoryList category='Contacto' href='./' />
+                <CartWidget iconClass='fa fa-shopping-cart' href='./' />
             </nav>
         </Fragment>
     )

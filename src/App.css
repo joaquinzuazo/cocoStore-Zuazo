@@ -3,19 +3,16 @@
 
 .App-header {
   display: flex;
-  flex-direction: column;
-  padding: 20px 10px 20px 10px;
+  height: 10vh;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  padding: 20px;
 }
 
 .App-main{
   display: flex;
-  height: 60vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
-}
-
-@media (min-width: 768px){
-  .App-header{
-      padding: 2% 10%;
-  }
+  background-color: #f6f6f6;
 }
