@@ -1,3 +1,5 @@
+import './categoryList.css'
+
 const CategoryList = (props)=>{
     return(
         <a href={props.href}>

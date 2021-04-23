@@ -1,13 +1,13 @@
-const ItemList = (props)=>{
-    const style={
-        color:'#db6563',
-        textAlign:'center',
-        fontSize:'3em'
-    }
+import { Fragment } from "react"
+import ItemList from './itemList/itemList'
 
+
+const ItemContainer = ()=>{
     return(
-        <p style={style} className={props.class}>{props.message}</p>
+        <Fragment>
+            <ItemList />
+        </Fragment>
     )
 }
 
-export default ItemList;
+export default ItemContainer;

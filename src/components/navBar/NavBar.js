@@ -3,6 +3,7 @@ import CartWidget from './cartWidget/CartWidget'
 import ImgWidget from './imgWidget/imgWidget'
 import { Fragment } from 'react'
 import Logo from './coco.png'
+import './navBar.css'
 
 
 const NavBar = ()=>{

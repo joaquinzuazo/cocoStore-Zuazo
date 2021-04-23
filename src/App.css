@@ -1,9 +1,5 @@
-@import url(./components/navBar/categoryList/categoryList.css);
-@import url(./components/navBar/navBar.css);
-
 .App-header {
   display: flex;
-  height: 10vh;
   justify-content: space-between;
   border-bottom: 1px solid rgb(199, 199, 199);
   padding: 20px;
@@ -11,7 +7,6 @@
 
 .App-main{
   display: flex;
-  height: 90vh;
   justify-content: center;
   align-items: center;
   background-color: #f6f6f6;

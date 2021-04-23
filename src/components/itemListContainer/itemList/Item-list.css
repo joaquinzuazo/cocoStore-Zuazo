@@ -1,0 +1,22 @@
+.item-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-list-title{
+    font-size: 2em;
+    color: #6d6d6d;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+@media (min-width: 1024px){
+    .item-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        align-items:stretch
+    }
+}
+

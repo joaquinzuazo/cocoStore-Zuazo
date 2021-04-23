@@ -1,6 +1,6 @@
 const CartWidget = (props)=>{
     return(
-        <img src={props.img} alt="img-logo" />
+        <img src={props.img} className='img-logo' alt="img-logo" />
     )
 }
 

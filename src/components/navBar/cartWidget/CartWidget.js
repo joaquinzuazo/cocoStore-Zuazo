@@ -1,7 +1,7 @@
 const CartWidget = (props)=>{
     return(
         <a href={props.href}>
-            <i class={props.iconClass}></i>
+            <i className={props.iconClass}></i>
         </a>
     )
 }
