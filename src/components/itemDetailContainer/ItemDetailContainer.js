@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import Item from './item/item'
-import './Item-list.css'
-import { NavLink } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react"
+import { useParams } from 'react-router-dom'
+import ItemDetail from './itemDetail/ItemDetail'
 
-const ItemList = ()=>{
 
-    const [arrayProduct, setArrayProduct] = useState([])
+const ItemDetailContainer = ()=>{
 
-    const product=[
+    const {id} = useParams()
+
+    const [Products, setProducts] = useState([])
+
+    const products=[
         {
           id: '1', 
           title: 'Raqueta Babolat',
@@ -43,24 +45,22 @@ const ItemList = ()=>{
 
     const prom=new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve(product)
+            resolve(products)
         },2000)
     })
 
     prom.then((res)=>{
-        setArrayProduct(res)
+        setProducts(res)
     })
 
+
     return(
-        <div>
-            <h3 className='item-list-title'>Ultimos productos</h3>
-            <div className='item-list'>
-                {
-                arrayProduct.map((product)=><NavLink to={`/product/detail/${product.id}`} className='item'><Item key={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} /></NavLink>)
-                }
-            </div>
-        </div>
+        <Fragment>
+            {Products.filter(product => product.id === id).map(filteproduct => (
+                <ItemDetail key={filteproduct.id} urlImg={filteproduct.image} title={filteproduct.title} price={filteproduct.price} detail={filteproduct.detail} numStock={filteproduct.stock} />
+            ))}
+        </Fragment>
     )
 }
 
-export default ItemList;
+export default ItemDetailContainer;

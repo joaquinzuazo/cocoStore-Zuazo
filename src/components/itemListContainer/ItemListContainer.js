@@ -2,7 +2,7 @@ import { Fragment } from "react"
 import ItemList from './itemList/itemList'
 
 
-const ItemContainer = ()=>{
+const ItemListContainer = ()=>{
     return(
         <Fragment>
             <ItemList />
@@ -10,4 +10,4 @@ const ItemContainer = ()=>{
     )
 }
 
-export default ItemContainer;
+export default ItemListContainer;

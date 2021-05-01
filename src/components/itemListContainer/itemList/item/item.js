@@ -1,9 +1,9 @@
-import ItemCount from '../itemCount/ItemCount'
+import { Fragment } from 'react';
 import './Item.css'
 
 const Item = ({urlImg,title,price,detail,numStock})=>{
     return(
-        <div className='item'>
+        <Fragment>
             <div className='item-img'>
                 <img src={urlImg} className='item-img-img' alt="img-item" />
             </div>
@@ -12,10 +12,8 @@ const Item = ({urlImg,title,price,detail,numStock})=>{
                 <small className='item-stock'>{numStock===0 ? 'Sin stock' : `Stock: ${numStock}` }</small>
                 <p className='item-detail'>{detail}</p>
                 <p className='item-price'>${price}</p>
-                <ItemCount numStock={numStock} />
             </div>
-            
-        </div>
+        </Fragment>      
     )
 }
 
