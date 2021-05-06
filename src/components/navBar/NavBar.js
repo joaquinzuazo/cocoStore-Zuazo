@@ -10,15 +10,16 @@ import './navBar.css'
 const NavBar = ()=>{
     return(
         <Fragment>
-            <NavLink to={`/`}>
             <div className='header-img'>
-                <ImgWidget img={Logo}/> 
+                <NavLink to={`/`}>
+                    <ImgWidget img={Logo}/> 
+                </NavLink>
             </div>            
-            </NavLink>
             <nav className='header-navBar'>
-                <CategoryList category='Home' href='/' />    
-                <CategoryList category='Productos' href='/' />    
-                <CategoryList category='Contacto' href='/' />
+                <CategoryList category='Raquetas' href='/category/Raquetas' />    
+                <CategoryList category='Zapatillas' href='/category/Zapatillas' />
+                <CategoryList category='Paletas' href='/category/Paletas' />
+                <CategoryList category='Accesorios' href='/category/Accesorios' />
                 <CartWidget iconClass='fa fa-shopping-cart' href='/' />
             </nav>
         </Fragment>

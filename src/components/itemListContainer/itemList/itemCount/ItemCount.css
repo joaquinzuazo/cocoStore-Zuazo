@@ -3,6 +3,7 @@ button{
     border-radius: 5px;
     border: 1px solid;
     margin: 1px;
+    padding: 6px;
 }
 
 button:hover{

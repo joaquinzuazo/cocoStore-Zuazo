@@ -3,6 +3,7 @@
     text-decoration: none;
     color: black;
     display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 10px;
     padding: 5px;
@@ -19,7 +20,7 @@
 }
 
 .item-img{
-    width: 40%;
+    width: 80%;
 }
 
 .item-img img{
@@ -42,6 +43,7 @@
 
 .item-detail{
     font-size: 1.5em;
+    text-align: justify;
 }
 
 .item-price{
@@ -54,5 +56,6 @@
     .item{
         width: 40%;
         margin: 20px;
+        flex-direction: row;
     }
 }
