@@ -1,0 +1,17 @@
+.cart-button{
+    text-align: center;
+}
+
+.cart-nav{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 100px;
+}
+
+.cart-empty{
+    margin-top: 50px;
+    font-size: 1.5em;
+    text-align: center;
+}
+

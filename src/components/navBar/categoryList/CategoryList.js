@@ -2,9 +2,9 @@ import './categoryList.css'
 
 const CategoryList = (props)=>{
     return(
-        <a href={props.href}>
+        <div>
             {props.category}
-        </a>
+        </div>
     )
 }
 

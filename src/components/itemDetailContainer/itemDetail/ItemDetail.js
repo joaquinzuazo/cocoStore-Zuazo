@@ -1,8 +1,9 @@
-import ItemCount from '../../itemListContainer/itemList/itemCount/ItemCount'
-import { ButtonToggle } from "reactstrap";
+import ItemCount from '../../itemCount/ItemCount'
+
 import './ItemDetail.css'
 
-const Item = ({urlImg,title,price,detail,numStock})=>{
+
+const Item = ({id,urlImg,title,price,detail,numStock})=>{
     return(
         <div className='itemDetail'>
             <div className='itemDetail-img'>
@@ -13,8 +14,7 @@ const Item = ({urlImg,title,price,detail,numStock})=>{
                 <small className='itemDetail-stock'>{numStock===0 ? 'Sin stock' : `Stock: ${numStock}` }</small>
                 <p className='itemDetail-detail'>{detail}</p>
                 <p className='itemDetail-price'>${price}</p>
-                <ItemCount numStock={numStock} />
-                <ButtonToggle color="info" style={{marginTop:'10px'}}>Agregar al carrito</ButtonToggle>
+                <ItemCount numStock={numStock} product={{id,title,price,urlImg}} />
             </div>
         </div>      
     )

@@ -3,32 +3,39 @@ import './App.css';
 import NavBar from './components/navBar/NavBar';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
+import Cart from './components/cart/Cart'
+import {CartFunction} from './context/CartContext'
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          <NavBar/>
-        </header>
-        <Switch>
-          <Route exact path='/'>
+    <CartFunction>
+      <BrowserRouter>
+        <div className="App">
+          <header className="App-header">
+            <NavBar/>
+          </header>
+          <Switch>
+            <Route exact path='/'>
+                <div className='App-main'>
+                  <ItemListContainer />
+                </div>
+            </Route>
+            <Route exact path='/category/:categoryName'>
               <div className='App-main'>
-                <ItemListContainer />
+                  <ItemListContainer />
               </div>
-          </Route>
-          <Route exact path='/category/:categoryName'>
-            <div className='App-main'>
-                <ItemListContainer />
-            </div>
-          </Route>
-          <Route exact path='/product/detail/:id'>
-            <ItemDetailContainer />
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+            </Route>
+            <Route exact path='/product/detail/:id'>
+              <ItemDetailContainer />
+            </Route>
+            <Route exact path='/cart'>
+              <Cart />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </CartFunction>
     
   );
 }

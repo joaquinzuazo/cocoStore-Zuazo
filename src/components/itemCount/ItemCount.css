@@ -1,4 +1,4 @@
-button{
+button, #subtract, #add{
     background-color: white;
     border-radius: 5px;
     border: 1px solid;
@@ -6,6 +6,8 @@ button{
     padding: 6px;
 }
 
-button:hover{
+#subtract:hover, #add:hover{
     cursor: pointer;
+    background-color: #17a2b8;
+    color: white;
 }

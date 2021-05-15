@@ -35,8 +35,9 @@
 }
 
 .itemDetail-title{
-    color: #7D6B7D;
+    color: #17a2b8;
     font-size: 2em;
+    font-weight:900;
     letter-spacing: 5px;
 }
 
@@ -50,7 +51,8 @@
 
 .itemDetail-price{
     font-size: 1.5em;
-    color: #db6563;
+    font-weight:900;
+    color: #17a2b8;
 }
 
 

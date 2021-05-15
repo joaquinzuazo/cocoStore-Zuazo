@@ -33,7 +33,7 @@ const ItemDetailContainer = ()=>{
     return(
         <Fragment>
             {Products.filter(product => product.id === id).map(filteproduct => (
-                <ItemDetail key={filteproduct.id} urlImg={filteproduct.image} title={filteproduct.title} price={filteproduct.price} detail={filteproduct.detail} numStock={filteproduct.stock} />
+                <ItemDetail key={filteproduct.id} id={filteproduct.id} urlImg={filteproduct.image} title={filteproduct.title} price={filteproduct.price} detail={filteproduct.detail} numStock={filteproduct.stock} />
             ))}
         </Fragment>
     )

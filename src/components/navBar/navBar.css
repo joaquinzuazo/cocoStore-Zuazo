@@ -18,6 +18,7 @@
 }
 
 .header-navBar a{
+    font-size: 0.8em;
     text-decoration: none;
     color: #6d6d6d;
     margin: 5px;
