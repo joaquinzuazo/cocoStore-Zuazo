@@ -1,62 +1,67 @@
-.item{
+#card{
     width: 70%;
-    text-decoration: none;
-    color: black;
     display: flex;
     flex-direction: column;
-    background-color: white;
     margin: 10px;
-    padding: 5px;
-    -webkit-box-shadow: 0px 0px 2px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 2px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 2px -1px rgba(0,0,0,0.75);
-    align-items:center;
+    text-align: center;
 }
 
-.item:hover{
-    -webkit-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
+#card:hover{
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
 }
 
-.item-img{
-    width: 80%;
+#card a{
+    text-decoration: none;
 }
 
-.item-img img{
-    width: 100%;
+#card img{
+    width: 50%;
 }
 
-.item-data{
-    width: 60%;
-}
-
-.item-title{
+#item-title{
     color: #17a2b8;
     font-weight:900;
-    font-size: 2em;
+    font-size: 1.5em;
     letter-spacing: 5px;
 }
 
-.item-stock{
+#item-stock{
+    color: #17a2b8;
     font-size: 1em;
 }
 
-.item-detail{
-    font-size: 1.5em;
+#item-detail{
+    font-size: 1.2em;
     text-align: justify;
-}
-
-.item-price{
-    font-size: 1.5em;
-    color: #17a2b8;
+    color: black;
 }
 
 
 @media (min-width: 1024px){
-    .item{
+    #card{
         width: 40%;
+    }
+    #item-img{
+        width: 100%;
+    }
+    #item-detail{
+        font-size: 1.5em;
+    }
+    #item-title{
+        font-size: 2em;
+    }
+    
+}
+
+@media (min-width: 1440px){
+    .item{
+        width: 20%;
         margin: 20px;
         flex-direction: row;
+    }
+    #item-img{
+        width: 100%;
     }
 }

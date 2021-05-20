@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom'
-
 import Item from './item/item'
 import Loading from '../../loading/Loading'
 import products from '../../../data/product'
+import ItemBanner from './../ItemBanner'
 import './Item-list.css'
-import { NavLink } from "react-router-dom";
+import { Fragment } from "react";
 
 const ItemList = ()=>{
 
@@ -33,14 +33,14 @@ const ItemList = ()=>{
 
     if(categoryName){
         return(
-        <div>
+        <Fragment>
             <h3 className='item-list-title'>{categoryName}</h3>
             <div className='item-list'>
                 {
-                arrayProduct.filter(product => product.categoryName === categoryName).map((product)=><NavLink to={`/product/detail/${product.id}`} className='item'><Item key={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} /></NavLink>)
+                arrayProduct.filter(product => product.categoryName === categoryName).map((product)=><Item key={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} url={product.id} />)
                 }
             </div>
-        </div>
+        </Fragment>
         )
     }
 
@@ -48,10 +48,11 @@ const ItemList = ()=>{
 
     return(
         <div>
+            <ItemBanner urlImg='/images/newbalance_banner.jpg' urlBanner='Zapatillas' />
             <h3 className='item-list-title'>Ultimos productos</h3>
             <div className='item-list'>
                 {
-                arrayProduct.map((product)=><NavLink to={`/product/detail/${product.id}`} className='item'><Item key={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} /></NavLink>)
+                arrayProduct.map((product)=><Item key={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} url={product.id}/>)
                 }
             </div>
         </div>

@@ -1,12 +1,11 @@
-import { Fragment } from "react"
 import ItemList from './itemList/itemList'
-
 
 const ItemListContainer = ()=>{
     return(
-        <Fragment>
+        <div className='home-item'>
+            
             <ItemList />
-        </Fragment>
+        </div>
     )
 }
 

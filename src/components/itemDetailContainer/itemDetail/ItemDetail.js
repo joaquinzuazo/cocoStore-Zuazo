@@ -1,23 +1,29 @@
+import React from 'react';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 import ItemCount from '../../itemCount/ItemCount'
-
 import './ItemDetail.css'
 
 
-const Item = ({id,urlImg,title,price,detail,numStock})=>{
-    return(
-        <div className='itemDetail'>
-            <div className='itemDetail-img'>
-                <img src={urlImg} className='itemDetail-img-img' alt="img-item" />
-            </div>
-            <div className='itemDetail-data'>
-                <h3 className='itemDetail-title'>{title}</h3>
-                <small className='itemDetail-stock'>{numStock===0 ? 'Sin stock' : `Stock: ${numStock}` }</small>
-                <p className='itemDetail-detail'>{detail}</p>
-                <p className='itemDetail-price'>${price}</p>
+const ItemDetail = ({id,urlImg,title,price,detail,numStock}) => {
+    return (
+        <Card id='cardDetail'>
+          <CardImg top width="100%" src={urlImg} alt="Card image cap" />
+          <CardBody>
+            <CardTitle tag="h5" id='cardDetail-title'>{title}</CardTitle>
+            <small className='itemDetail-stock'>{numStock===0 ? 'Sin stock' : `Stock: ${numStock}` }</small>
+            <CardSubtitle tag="h6" id='cardDetail-price'>${price}</CardSubtitle>
+            <CardText id='cardDetail-detail' >{detail}</CardText>
+            <div className='cardDetail-count'>
                 <ItemCount numStock={numStock} product={{id,title,price,urlImg}} />
             </div>
-        </div>      
-    )
-}
+          </CardBody>
+        </Card>
+    );
+  };
+  
+export default ItemDetail;
 
-export default Item;
+

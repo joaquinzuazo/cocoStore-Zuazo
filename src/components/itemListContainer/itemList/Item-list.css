@@ -1,7 +1,13 @@
+.home-item{
+    display: flex;
+    flex-direction: column;
+}
+
 .item-list{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .item-list-title{
@@ -12,12 +18,29 @@
     text-align: center;
 }
 
+/* BANNER */
+.itemBanner{
+    margin: 20px;
+}
+
+.itemBanner-img{
+    width: 100%;
+}
+
 @media (min-width: 1024px){
     .item-list{
         display: flex;
         flex-direction: row;
         flex-wrap:wrap;
         align-items:stretch
+    }
+
+    .itemBanner{
+        margin: 20px 100px 20px 100px
+    }
+    
+    .itemBanner-img{
+        width: 100%;
     }
 }
 
