@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom'
 import Item from './item/item'
 import Loading from '../../loading/Loading'
-import products from '../../../data/product'
 import ItemBanner from './../ItemBanner'
 import './Item-list.css'
 import { Fragment } from "react";
+import { getFirestore } from '../../../firebase/index'
 
 const ItemList = ()=>{
 
@@ -14,16 +14,21 @@ const ItemList = ()=>{
     const [arrayProduct, setArrayProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const prom=new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(products)
-        },2000)
-    })
-
-    prom.then((res)=>{
-        setArrayProduct(res)
-        setLoading(false)
-    })
+    useEffect(() => {
+        const db=getFirestore();
+        const items=db.collection('items');
+        items.get()
+            .then((querySnapShot)=>{
+            const itemsAux=querySnapShot.docs.map((doc)=>{
+                return {
+                    id:doc.id,
+                    ...doc.data()
+                }});
+            console.log(itemsAux)
+            setArrayProduct(itemsAux)
+            setLoading(false)
+        })
+    },[]);
 
     if(loading){
         return(

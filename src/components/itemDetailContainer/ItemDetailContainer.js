@@ -2,26 +2,27 @@ import React, { Fragment, useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from './itemDetail/ItemDetail'
 import Loading from '../loading/Loading'
-import products from '../../data/product'
+import { getFirestore } from '../../../src/firebase/index'
 
 
 const ItemDetailContainer = ()=>{
 
     const {id} = useParams()
 
-    const [Products, setProducts] = useState([])
+    const [Product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const prom=new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(products)
-        },2000)
-    })
+    useEffect(() => {
+        const db=getFirestore();
+        const items=db.collection('items');
+        const item=items.doc(id)
 
-    prom.then((res)=>{
-        setProducts(res)
-        setLoading(false)
-    })
+        item.get()
+            .then((doc)=>{
+            setProduct([{id:doc.id,...doc.data()}])
+            setLoading(false)
+        })
+    });
 
     if(loading){
         return(
@@ -29,11 +30,10 @@ const ItemDetailContainer = ()=>{
         )
     }
 
-
     return(
         <Fragment>
-            {Products.filter(product => product.id === id).map(filteproduct => (
-                <ItemDetail key={filteproduct.id} id={filteproduct.id} urlImg={filteproduct.image} title={filteproduct.title} price={filteproduct.price} detail={filteproduct.detail} numStock={filteproduct.stock} />
+            {Product.map(product => (
+                <ItemDetail key={product.id} id={product.id} urlImg={product.image} title={product.title} price={product.price} detail={product.detail} numStock={product.stock} />
             ))}
         </Fragment>
     )
