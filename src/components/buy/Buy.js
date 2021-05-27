@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import {CartContext} from '../../context/CartContext'
 import { getFirestore } from '../../firebase/index'
 import firebase from 'firebase/app'
@@ -77,6 +78,9 @@ function Buy() {
             {id &&
             <div className='buy-text-ok'>
                 <p>Su orden se genero correctamente y sera enviada a la brevedad, numero de identificacion <strong>{id}</strong></p>
+                <NavLink to={`/`}>
+                    <Button>Regresar al home</Button>
+                </NavLink>
             </div>
             }
         </div>
