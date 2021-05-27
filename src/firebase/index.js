@@ -2,12 +2,12 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyBbpuf6-9BscwuLANNuikYkBUmApwXZoDA",
-    authDomain: "ecommerce-cocostore.firebaseapp.com",
-    projectId: "ecommerce-cocostore",
-    storageBucket: "ecommerce-cocostore.appspot.com",
-    messagingSenderId: "406957660403",
-    appId: "1:406957660403:web:eb0535c2753b5fd50b7f86"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 })
 
 export const getFirebase=()=> app();

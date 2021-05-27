@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import {CartContext} from '../../context/CartContext'
 import ItemCart from './itemCart/ItemCart'
-import { ButtonToggle } from "reactstrap";
+import { Button } from "reactstrap";
 import './Cart.css'
 
 
@@ -15,9 +15,8 @@ function Cart() {
             <Fragment>
                 <p className='cart-empty'>Por el momento no hay elementos agregados al carrito</p>
                 <NavLink className='cart-nav' to={`/`}>
-                    <ButtonToggle color="info" style={{fontSize:"1em"}}>¡Inicia tu compra!</ButtonToggle>
+                    <Button color="info" size="lg" style={{fontSize:"1em"}}>¡Inicia tu compra!</Button>
                 </NavLink>
-                
             </Fragment>
         )
     }
@@ -31,7 +30,11 @@ function Cart() {
                 <p>Total compra: ${cartTotal}</p>
             </div>
             <div className='cart-button'>
-                <ButtonToggle color="danger" style={{fontSize:'100%'}} onClick={()=>clear()} >Vaciar carrito</ButtonToggle>
+                <Button outline color="danger" size="lg" style={{fontSize:'100%'}} onClick={()=>clear()} >Vaciar carrito</Button>
+                <NavLink to={`/buy`}>
+                    <Button outline color="success" size="lg" style={{fontSize:'100%'}}>Terminar compra</Button>
+                </NavLink>
+                
             </div>
         </div>
   );

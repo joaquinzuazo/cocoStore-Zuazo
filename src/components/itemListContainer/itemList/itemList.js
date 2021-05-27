@@ -24,7 +24,6 @@ const ItemList = ()=>{
                     id:doc.id,
                     ...doc.data()
                 }});
-            console.log(itemsAux)
             setArrayProduct(itemsAux)
             setLoading(false)
         })
