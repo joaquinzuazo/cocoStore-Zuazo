@@ -41,18 +41,14 @@ function Buy() {
             orders.add(order)
             .then((data)=>{
                 setId(data.id)
-                console.log(id)
+                clear()
+                setOrder({})
             })
             .catch((e)=>{
                 console.log('error'+e)
             })
         }
     },[order])
-
-    useEffect(()=>{
-        clear()
-        setOrder({})
-    },[id])
 
     return (
         <div className='buy'>
