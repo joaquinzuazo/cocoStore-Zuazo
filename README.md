@@ -3,6 +3,9 @@
 *Proyecto de e-commerce para el curso de React Js en [Coder House](https://www.coderhouse.com/online/reactjs)*
 
 
+![Alt Text](https://gifyu.com/image/os1G)
+
+
 ## Iniciando: 🚀
 
 *Con las siguientes instrucciones podrás obtener una copia del proyecto en tu equipo y visualizar el mismo*
