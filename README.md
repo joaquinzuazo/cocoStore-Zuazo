@@ -3,7 +3,7 @@
 *Proyecto de e-commerce para el curso de React Js en [Coder House](https://www.coderhouse.com/online/reactjs)*
 
 
-![Alt Text](https://s1.gifyu.com/images/Animationf34e3c29cd60a8e9.md.gif)
+![Alt Text](https://media.giphy.com/media/r4XFDdLSnTYcsYt1Lr/giphy.gif)
 
 
 ## Iniciando: 🚀
@@ -31,5 +31,3 @@ npm start -> para correr el proyecto
 ## Autor: ✒️
 
 [Joaquin Zuazo Ciolfi](https://github.com/joaquinzuazo)
-
-<video src="https://i.imgur.com/i9vyR1t.mp4" />
