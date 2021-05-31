@@ -3,15 +3,9 @@
 *Proyecto de e-commerce para el curso de React Js en [Coder House](https://www.coderhouse.com/online/reactjs)*
 
 
-
-<video src="https://i.imgur.com/i9vyR1t.mp4" />
-
-
-
 ## Iniciando: 🚀
 
 *Con las siguientes instrucciones podrás obtener una copia del proyecto en tu equipo y visualizar el mismo*
-
 
 
 ### Pre-requisitos: 📋
@@ -19,7 +13,6 @@
 *Deberás tener instalado:*
 
 - [ ] [Node JS](https://nodejs.org/es/)
-
 
 
 ### Ejecución: 🔧
@@ -32,7 +25,8 @@ npm start -> para correr el proyecto
 ```
 
 
-
 ## Autor: ✒️
 
 [Joaquin Zuazo Ciolfi](https://github.com/joaquinzuazo)
+
+<video src="https://i.imgur.com/i9vyR1t.mp4" />
