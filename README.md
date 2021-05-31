@@ -4,6 +4,10 @@
 
 
 
+<video src="https://i.imgur.com/i9vyR1t.mp4" />
+
+
+
 ## Iniciando: 🚀
 
 *Con las siguientes instrucciones podrás obtener una copia del proyecto en tu equipo y visualizar el mismo*

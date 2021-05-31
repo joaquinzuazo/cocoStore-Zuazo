@@ -1,16 +1,17 @@
-import CategoryList from './categoryList/CategoryList'
 import CartWidget from './cartWidget/CartWidget'
 import ImgWidget from './imgWidget/imgWidget'
-import { Fragment } from 'react'
+import { Fragment, useContext, useState } from 'react'
 import { NavLink } from "react-router-dom";
-import {useContext} from 'react'
 import {CartContext} from '../../context/CartContext'
+import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import Logo from './coco.png'
 import './navBar.css'
 
 
 const NavBar = ()=>{
     const {cartUnits} = useContext(CartContext)
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(!dropdownOpen);
 
     return(
         <Fragment>
@@ -18,24 +19,37 @@ const NavBar = ()=>{
                 <NavLink to={`/`}>
                     <ImgWidget img={Logo}/> 
                 </NavLink>
-            </div>            
-            <nav className='header-navBar'>
-                <NavLink to={`/category/Raquetas`}>
-                    <CategoryList category='Raquetas' />   
-                </NavLink>     
-                <NavLink to={`/category/Zapatillas`}>
-                    <CategoryList category='Zapatillas'/>
-                </NavLink>
-                <NavLink to={`/category/Paletas`}>
-                    <CategoryList category='Paletas' href='/category/Paletas' />
-                </NavLink>
-                <NavLink to={`/category/Accesorios`}>
-                    <CategoryList category='Accesorios'/>
-                </NavLink>
+            </div> 
+            <Nav tabs>
+                <div className='header-navBar'>     
+                <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
+                    <DropdownToggle nav caret>
+                        Categorias
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <NavLink to={`/category/Raquetas`}>
+                            <DropdownItem>Raquetas</DropdownItem>
+                        </NavLink>   
+                        <DropdownItem divider />
+                        <NavLink to={`/category/Zapatillas`}>
+                            <DropdownItem>Zapatillas</DropdownItem>
+                        </NavLink>       
+                        <DropdownItem divider />
+                        <NavLink to={`/category/Paletas`}>
+                            <DropdownItem>Paletas</DropdownItem>
+                        </NavLink>  
+                        <DropdownItem divider />
+                        <NavLink to={`/category/Accesorios`}>
+                            <DropdownItem>Accesorios</DropdownItem>
+                        </NavLink>   
+                        <DropdownItem divider />
+                    </DropdownMenu>
+                </Dropdown>     
                 <NavLink to={`/cart`}>
                     <CartWidget iconClass='fa fa-shopping-cart' href='/cart' cartUnits={cartUnits} />
                 </NavLink>
-            </nav>
+                </div>
+            </Nav>
         </Fragment>
     )
 }
