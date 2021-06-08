@@ -3,7 +3,8 @@
 *Proyecto de e-commerce para el curso de React Js en [Coder House](https://www.coderhouse.com/online/reactjs)*
 
 
-![Alt Text](https://media.giphy.com/media/r4XFDdLSnTYcsYt1Lr/giphy.gif)
+![Alt Text](https://media.giphy.com/media/nV2hnOxDdgBRUUfqNG/giphy.gif)
+
 
 
 ## Iniciando: 🚀
