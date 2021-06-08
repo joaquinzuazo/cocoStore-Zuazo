@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+
+
+const notyf = new Notyf();
 
 const CartContext = React.createContext()
 
@@ -15,12 +20,14 @@ const CartFunction=({children})=>{
             cartAux.push({id:product.id,title:product.title,price:product.price,quantity:quantity,priceTotal:(product.price*quantity),urlImg:product.urlImg})
             setCart(cartAux);
             setCartTotal(cartTotal+(product.price*quantity))
+            notyf.success(`Agregado al carrito correctamente.`);
         }else{
             const cartAux=cart.map((item)=>{
                 if(item.id===itemExists.id){
                     item.quantity+=quantity
                     item.priceTotal+=(quantity*item.price)
                     setCartTotal(cartTotal+(quantity*item.price))
+                    notyf.success(`Agregado al carrito correctamente.`);
                 }
                 return item
             })
@@ -35,6 +42,7 @@ const CartFunction=({children})=>{
         setCart(cartAux)
         setCartUnits(cartUnits-1)
         setCartTotal(cartTotal-priceTotal)
+        notyf.error(`El item fue removido correctamente.`);
     }
 
     const clear=()=>{

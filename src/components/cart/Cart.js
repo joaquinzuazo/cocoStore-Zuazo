@@ -15,7 +15,7 @@ function Cart() {
             <Fragment>
                 <p className='cart-empty'>Por el momento no hay elementos agregados al carrito</p>
                 <NavLink className='cart-nav' to={`/`}>
-                    <Button color="info" size="lg" style={{fontSize:"1em"}}>¡Inicia tu compra!</Button>
+                    <Button color="info" >¡Inicia tu compra!</Button>
                 </NavLink>
             </Fragment>
         )
@@ -30,9 +30,9 @@ function Cart() {
                 <p>Total compra: ${cartTotal}</p>
             </div>
             <div className='cart-button'>
-                <Button outline color="danger" size="lg" style={{fontSize:'100%'}} onClick={()=>clear()} >Vaciar carrito</Button>
+                <Button outline color="danger" onClick={()=>clear()} >Vaciar carrito</Button>
                 <NavLink to={`/buy`}>
-                    <Button outline color="success" size="lg" style={{fontSize:'100%'}}>Terminar compra</Button>
+                    <Button outline color="success">Terminar compra</Button>
                 </NavLink>
                 
             </div>

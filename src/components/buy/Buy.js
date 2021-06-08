@@ -5,9 +5,12 @@ import { getFirestore } from '../../firebase/index'
 import firebase from 'firebase/app'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './Buy.css'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 
 function Buy() {
+    const notyf = new Notyf();
     const {cart, cartTotal, clear} = useContext(CartContext)
     const [user, setUser] = useState({
         name:"",
@@ -34,6 +37,7 @@ function Buy() {
             cartTotal
         }
         setOrder(orderAux)
+        notyf.success(`Orden enviada correctamente.`);
     }
 
     useEffect(()=>{
